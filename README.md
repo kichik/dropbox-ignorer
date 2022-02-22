@@ -19,3 +19,13 @@ C:\> dropbox-ignorer node_modules
 
 [![CI](https://github.com/kichik/dropbox-ignorer/actions/workflows/goreleaser.yml/badge.svg)](https://github.com/kichik/dropbox-ignorer/actions/workflows/goreleaser.yml) [![GitHub go.mod Go version of a Go module](https://img.shields.io/github/go-mod/go-version/kichik/dropbox-ignorer.svg)](https://github.com/kichik/dropbox-ignorer)
 [![GoReportCard](https://goreportcard.com/badge/github.com/kichik/dropbox-ignorer)](https://goreportcard.com/report/github.com/kichik/dropbox-ignorer) [![GitHub license](https://img.shields.io/github/license/kichik/dropbox-ignorer.svg)](https://github.com/kichik/dropbox-ignorer/blob/main/LICENSE) [![GitHub release](https://img.shields.io/github/release/kichik/dropbox-ignorer.svg)](https://GitHub.com/kichik/dropbox-ignorer/releases/)
+
+## Options
+
+If you have multiple Dropbox folders, or your Dropbox folder is not under `$HOME`, you can use `--dropbox-folder` to specify another folder.
+
+```
+C:\> dropbox-ignorer -d D:\some\other\dropbox node_modules
+2022/02/21 16:51:24 Scanning D:\some\other\dropbox for node_modules...
+2022/02/21 16:51:24 Excluded D:\some\other\dropbox\some-node-project\node_modules
+```
