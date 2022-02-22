@@ -33,6 +33,7 @@ C:\> dropbox-ignorer -d D:\some\other\dropbox node_modules
 ## Other Solutions
 
 * [dropboxignore](https://dropboxignore.simakis.me/) with support for `.dropboxignore` files
+* [dropbox-ignore-node_modules](https://github.com/tmackness/dropbox-ignore-node_modules)
 * [OSX Automator script](https://medium.com/@bozzified/dropbox-ignore-solving-ignoring-node-modules-and-other-folders-from-syncing-on-a-mac-ae5fa44543e8)
 * [StackOverflow: How to ignore node_modules recursively in Dropbox on a Mac](https://stackoverflow.com/a/69655523/492773)
 * [StackOverflow: How to ignore files recursively in Dropbox using Powershell](https://stackoverflow.com/q/68714334/492773)
