@@ -78,7 +78,7 @@ func exclude(dir string) {
 }
 
 func excludeWindows(dir string) error {
-	ads, err := os.OpenFile(dir+":com.dropbox.ignored", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	ads, err := os.OpenFile(dir+":com.dropbox.ignored", os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0644)
 	if err != nil {
 		return err
 	}
