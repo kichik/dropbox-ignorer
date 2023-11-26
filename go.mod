@@ -1,6 +1,6 @@
 module dropbox-ignorer
 
-go 1.19
+go 1.21
 
 require (
 	github.com/spf13/cobra v1.3.0
