@@ -1,8 +1,8 @@
 package main
 
 import (
+	"context"
 	"fmt"
-	"github.com/spf13/cobra"
 	"io/ioutil"
 	"log"
 	"os"
@@ -11,6 +11,9 @@ import (
 	"runtime"
 	"strings"
 	"sync"
+
+	"github.com/spf13/cobra"
+	"golang.org/x/sync/semaphore"
 )
 
 // set by goreleaser
@@ -22,9 +25,12 @@ var (
 // logic
 
 var wg sync.WaitGroup
+var sem = semaphore.NewWeighted(100) // don't run too many goroutines at once so we don't hit the 1000 threads limit
 
 func handleDir(dir string, patternlist []string) {
 	defer wg.Done()
+	sem.Acquire(context.TODO(), 1)
+	defer sem.Release(1)
 
 	files, err := ioutil.ReadDir(dir)
 	if err != nil {
