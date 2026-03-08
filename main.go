@@ -25,7 +25,7 @@ var (
 // logic
 
 var wg sync.WaitGroup
-var sem = semaphore.NewWeighted(100) // don't run too many goroutines at once so we don't hit the 1000 threads limit
+var sem = semaphore.NewWeighted(10) // don't run too many goroutines at once so we don't hit the 1000 threads limit
 
 func handleDir(dir string, patternlist []string) {
 	defer wg.Done()
